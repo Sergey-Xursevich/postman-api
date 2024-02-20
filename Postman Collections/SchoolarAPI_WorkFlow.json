@@ -1,0 +1,906 @@
+{
+	"info": {
+		"_postman_id": "328d5a2d-669f-4a5f-bc4a-40e4d1201330",
+		"name": "SchoolarSync",
+		"description": "This comprehensive guide is designed to assist developers in impleenting and integrating the functionalities provided by API seamlessly. Here you can find documentation will guide you through the various endpoints, parameters, and methods to help you make the most out of API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign up",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "14958a2b-aae8-4b4f-af41-c91bc7895855",
+								"exec": [
+									"// status code check and content-type\r",
+									"pm.test(\"Status code is 200 and content-type is JSON\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "ee16360a-8b52-4bcc-9af1-2cc856aee585",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Keanu Reavze\",\r\n    \"password\": \"6bds!fj#59f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/v1/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "Log in",
+					"id": "47cef1b5-ab8a-4c6c-8239-05bc2534529c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Keanu Reavze\",\r\n    \"password\": \"6bds!fj#59f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/v1/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Log out",
+					"id": "89ca5b99-b128-4c66-b6e1-09b2b6c0e184",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"65d38524cb3a9077017bc48a\",\r\n    \"username\": \"Keanu Reavze\",\r\n    \"password\": \"$2b$10$uN/wq8jWmJmewbo.hEJCw.x.elAMQRqJlz/zeRk69qePo0Ha4VOmu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/v1/logout"
+					},
+					"response": []
+				}
+			],
+			"id": "e4f966c6-ac6c-4ec2-b7e6-c39b3416eacb"
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create user",
+					"id": "d889f11c-90ab-43c0-95f9-d9bf820e5853",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Garri Kemb\",\r\n    \"password\": \"23++344543fe_f1221__dds\",\r\n    \"role\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/v1/users",
+						"description": "This endpoint allows the creation of a new user in the system. It accepts user details in the request body and returns the created user's data along with a success message.\n\n#### Request\n\n- **Method**: POST\n    \n- **URL**: `http://localhost:8080/v1/users`\n    \n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n``` json\n{\n  \"username\": \"string\",\n  \"password\": \"string\",\n  \"role\": \"number\"\n}\n\n ```\n\n- **Parameters**:\n    \n    - `username`: The username of the new user. Must be a string.\n        \n    - `password`: The password for the new user. Must be a string that meets the system's password requirements.\n        \n    - `role`: The role assigned to the user. Must be a number. The meaning of this number (e.g., admin, user, etc.) should be defined according to the system's roles.\n        \n\n#### Response\n\n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n``` json\n{\n  \"data\": {\n    \"username\": \"string\",\n    \"password\": \"string\",\n    \"role\": \"number\",\n    \"availableCourses\": \"array\",\n    \"_id\": \"string\",\n    \"createdAt\": \"string\",\n    \"updatedAt\": \"string\",\n    \"__v\": \"number\"\n  },\n  \"message\": \"string\"\n}\n\n ```\n\n- **Fields**:\n    \n    - `data`: An object containing the created user's details.\n        \n        - `username`: The username of the created user.\n            \n        - `password`: The password of the created user. It's returned in the response for completeness, but it's recommended to not expose passwords in responses for security reasons.\n            \n        - `role`: The role number assigned to the user.\n            \n        - `availableCourses`: An array of courses available to the user. Initially empty for new users.\n            \n        - `_id`: The unique identifier for the created user.\n            \n        - `createdAt`: The timestamp when the user was created.\n            \n        - `updatedAt`: The timestamp when the user's information was last updated. Initially, it's the same as `createdAt`.\n            \n        - `__v`: The version of the document in the database. Used internally for handling document updates.\n            \n- `message`: A message indicating the outcome of the operation. For a successful creation, it typically says `\"created\"`.\n    \n\n#### Status Codes\n\n- **201 Created**: The request was successful, and a new user was created.\n    \n- **400 Bad Request**: The request was malformed. This status is returned if the request body does not contain the required fields or the field values do not meet the specifications (e.g., password strength requirements).\n    \n- **409 Conflict**: A user with the given username already exists."
+					},
+					"response": [
+						{
+							"id": "9d47e26e-7b7c-4aa0-9831-b583b08f8568",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Garri Kemb\",\r\n    \"password\": \"23++344543fe_f1221__dds\",\r\n    \"role\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/v1/users"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f1-6ihBGCNCBgIUY5OzLmMkSTMomew\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:25:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"data\": {\n        \"username\": \"Garri Kemb\",\n        \"password\": \"23++344543fe_f1221__dds\",\n        \"role\": 1,\n        \"availableCourses\": [],\n        \"_id\": \"65cb97f5323f9a9019796f0f\",\n        \"createdAt\": \"2024-02-13T16:25:25.836Z\",\n        \"updatedAt\": \"2024-02-13T16:25:25.836Z\",\n        \"__v\": 0\n    },\n    \"message\": \"created\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create user Copy",
+					"id": "6d4a4fdb-a20a-4328-87b1-f6cf948df1c5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Garri Blik\",\r\n    \"password\": \"23++344543fe_f1221__dds\",\r\n    \"role\": 5,\r\n    \"availableCourses\": \"Kent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/v1/users",
+						"description": "This endpoint allows the creation of a new user in the system. It accepts user details in the request body and returns the created user's data along with a success message.\n\n#### Request\n\n- **Method**: POST\n    \n- **URL**: `http://localhost:8080/v1/users`\n    \n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n``` json\n{\n  \"username\": \"string\",\n  \"password\": \"string\",\n  \"role\": \"number\"\n}\n\n ```\n\n- **Parameters**:\n    \n    - `username`: The username of the new user. Must be a string.\n        \n    - `password`: The password for the new user. Must be a string that meets the system's password requirements.\n        \n    - `role`: The role assigned to the user. Must be a number. The meaning of this number (e.g., admin, user, etc.) should be defined according to the system's roles.\n        \n\n#### Response\n\n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n``` json\n{\n  \"data\": {\n    \"username\": \"string\",\n    \"password\": \"string\",\n    \"role\": \"number\",\n    \"availableCourses\": \"array\",\n    \"_id\": \"string\",\n    \"createdAt\": \"string\",\n    \"updatedAt\": \"string\",\n    \"__v\": \"number\"\n  },\n  \"message\": \"string\"\n}\n\n ```\n\n- **Fields**:\n    \n    - `data`: An object containing the created user's details.\n        \n        - `username`: The username of the created user.\n            \n        - `password`: The password of the created user. It's returned in the response for completeness, but it's recommended to not expose passwords in responses for security reasons.\n            \n        - `role`: The role number assigned to the user.\n            \n        - `availableCourses`: An array of courses available to the user. Initially empty for new users.\n            \n        - `_id`: The unique identifier for the created user.\n            \n        - `createdAt`: The timestamp when the user was created.\n            \n        - `updatedAt`: The timestamp when the user's information was last updated. Initially, it's the same as `createdAt`.\n            \n        - `__v`: The version of the document in the database. Used internally for handling document updates.\n            \n- `message`: A message indicating the outcome of the operation. For a successful creation, it typically says `\"created\"`.\n    \n\n#### Status Codes\n\n- **201 Created**: The request was successful, and a new user was created.\n    \n- **400 Bad Request**: The request was malformed. This status is returned if the request body does not contain the required fields or the field values do not meet the specifications (e.g., password strength requirements).\n    \n- **409 Conflict**: A user with the given username already exists."
+					},
+					"response": [
+						{
+							"id": "c8829be5-8afc-4ed0-850c-81ee1709754b",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Garri Kemb\",\r\n    \"password\": \"23++344543fe_f1221__dds\",\r\n    \"role\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/v1/users"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f1-6ihBGCNCBgIUY5OzLmMkSTMomew\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:25:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"data\": {\n        \"username\": \"Garri Kemb\",\n        \"password\": \"23++344543fe_f1221__dds\",\n        \"role\": 1,\n        \"availableCourses\": [],\n        \"_id\": \"65cb97f5323f9a9019796f0f\",\n        \"createdAt\": \"2024-02-13T16:25:25.836Z\",\n        \"updatedAt\": \"2024-02-13T16:25:25.836Z\",\n        \"__v\": 0\n    },\n    \"message\": \"created\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get users",
+					"id": "66e6f09d-8d80-4cb5-b079-71b01511008e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/v1/users",
+						"description": "This endpoint retrieves a list of all users registered in the system. It returns an array of user objects, each containing the details of a user, including their unique identifier, username, role, available courses, and timestamps for creation and last update.\n\n#### Request\n\n- **Method**: GET\n- **URL**: `http://localhost:8080/v1/users`\n    \n\n#### Response\n\n- **Content-Type**: `application/json`\n- **Body**:\n    \n\n``` json\n{\n  \"data\": [\n    {\n      \"_id\": \"string\",\n      \"username\": \"string\",\n      \"password\": \"string\",\n      \"role\": \"number\",\n      \"availableCourses\": \"array\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\",\n      \"__v\": \"number\"\n    }\n  ],\n  \"message\": \"string\"\n}\n\n ```\n\n- **Fields**:\n- `data`: An array of user objects.\n    - `_id`: The unique identifier for the user.\n    - `username`: The username of the user.\n    - `password`: The password of the user. As a security best practice, consider removing or hashing passwords when sending over networks.\n    - `role`: The role number assigned to the user. The meaning of the role number should be defined according to the system's roles.\n    - `availableCourses`: An array of courses available to the user. May be empty.\n    - `createdAt`: The timestamp when the user was created.\n    - `updatedAt`: The timestamp when the user's information was last updated.\n    - `__v`: The version of the document in the database. Used internally for handling document updates.\n- `message`: A message indicating the outcome of the operation. For a successful retrieval, it typically says `\"received\"`.\n    \n\n#### Status Codes\n\n- **200 OK**: The request was successful, and the list of users is returned.\n- **400 Bad Request**: The request was malformed. This status is returned if the request body does not contain the required fields or the field values do not meet the specifications (e.g., password strength requirements)."
+					},
+					"response": [
+						{
+							"id": "2a23b0d5-0406-420c-a566-0d7eb111a6a8",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/v1/users"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1074"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"432-7WG20/I2HIIYEuIS5f0NkKO9QnE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:25:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"65ca83b71834f1a314f31c0f\",\n            \"username\": \"Greg Ivanov\",\n            \"password\": \"12dfhdy766763j)))23\",\n            \"role\": 1,\n            \"availableCourses\": [],\n            \"createdAt\": \"2024-02-12T20:46:47.182Z\",\n            \"updatedAt\": \"2024-02-13T16:25:04.764Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65ca851cc343c8bea39f5948\",\n            \"username\": \"James Bond\",\n            \"password\": \"145)skas!!sdh\",\n            \"role\": 2,\n            \"availableCourses\": [],\n            \"createdAt\": \"2024-02-12T20:52:44.454Z\",\n            \"updatedAt\": \"2024-02-12T20:52:44.454Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65cb7eeedd32f95e37d06fa0\",\n            \"username\": \"Koperfild\",\n            \"password\": \"23++1221__dds\",\n            \"role\": 0,\n            \"availableCourses\": [],\n            \"createdAt\": \"2024-02-13T14:38:38.405Z\",\n            \"updatedAt\": \"2024-02-13T14:38:38.405Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65cb90cdb9397a6a40da4d60\",\n            \"username\": \"Garri Gudini\",\n            \"password\": \"23++344543fe_f1221__dds\",\n            \"role\": 0,\n            \"availableCourses\": [],\n            \"createdAt\": \"2024-02-13T15:54:53.462Z\",\n            \"updatedAt\": \"2024-02-13T15:54:53.462Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65cb97f5323f9a9019796f0f\",\n            \"username\": \"Garri Kemb\",\n            \"password\": \"23++344543fe_f1221__dds\",\n            \"role\": 1,\n            \"availableCourses\": [],\n            \"createdAt\": \"2024-02-13T16:25:25.836Z\",\n            \"updatedAt\": \"2024-02-13T16:25:25.836Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"received\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update user",
+					"id": "35a7b734-cbfa-40cf-ae28-7b2e647d73cb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"qS:.54$7VtDUY_eMW~KGFX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/users/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "f8bc711a-20c8-4a32-905f-8ffdac88fb51",
+									"key": "id",
+									"value": "65ca83b71834f1a314f31c0f"
+								}
+							]
+						},
+						"description": "This endpoint updates the details of an existing user identified by their unique identifier (`:id`). It allows partial updates, meaning only the fields provided in the request body will be updated.\n\n#### Request\n\n- **Method**: PUT\n- **URL**: `http://localhost:8080/v1/users/:id`\n    - **`:id`**: The unique identifier of the user to update. Replace `:id` with the actual user ID.\n- **Content-Type**: `application/json`\n- **Body:**\n    \n\n``` json\n{\n  \"username\": \"string\",\n  \"role\": \"number\"\n}\n\n ```\n\n- **Parameters**:\n    \n    - `username`: The new username of the user. This field is optional for the update.\n        \n    - `role`: The new role assigned to the user. This field is optional for the update.\n        \n\n#### Response\n\n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n``` json\n{\n  \"data\": {\n    \"_id\": \"string\",\n    \"username\": \"string\",\n    \"password\": \"string\",\n    \"role\": \"number\",\n    \"availableCourses\": \"array\",\n    \"createdAt\": \"string\",\n    \"updatedAt\": \"string\",\n    \"__v\": \"number\"\n  },\n  \"message\": \"string\"\n}\n\n ```\n\n- **Fields**:\n    \n    - `data`: An object containing the updated user's details.\n        \n        - `_id`: The unique identifier for the user.\n            \n        - `username`: The updated username of the user.\n            \n        - `password`: The password of the user. It's returned for completeness but consider omitting or hashing it for security.\n            \n        - `role`: The updated role number assigned to the user.\n            \n        - `availableCourses`: An array of courses available to the user. This field is not affected by the update unless specifically targeted.\n            \n        - `createdAt`: The timestamp when the user was initially created.\n            \n        - `updatedAt`: The timestamp when the user's information was last updated.\n            \n        - `__v`: The version of the document in the database, used internally for handling document updates.\n            \n    - `message`: A message indicating the outcome of the operation. For a successful update, it typically says `\"updated\"`.\n        \n\n#### Status Codes\n\n- **200 OK**: The request was successful, and the user's details were updated.\n    \n- **400 Bad Request**: The request was malformed, such as missing required fields.\n    \n- **404 Not Found**: No user found with the given ID."
+					},
+					"response": [
+						{
+							"id": "5c8d84ae-807c-4e45-b998-48d7a524af87",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Greg Ivanov\",\r\n    \"role\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/v1/users/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "f8bc711a-20c8-4a32-905f-8ffdac88fb51",
+											"key": "id",
+											"value": "65ca83b71834f1a314f31c0f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "238"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ee-WsQ/XdED1Y1SbxudqIVA0vhRMnM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:25:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"data\": {\n        \"_id\": \"65ca83b71834f1a314f31c0f\",\n        \"username\": \"Greg Ivanov\",\n        \"password\": \"12dfhdy766763j)))23\",\n        \"role\": 1,\n        \"availableCourses\": [],\n        \"createdAt\": \"2024-02-12T20:46:47.182Z\",\n        \"updatedAt\": \"2024-02-13T16:25:58.163Z\",\n        \"__v\": 0\n    },\n    \"message\": \"updated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete user",
+					"id": "138acfbe-233c-4b51-900e-027b765af759",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/users/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65cb97f5323f9a9019796f0f"
+								}
+							]
+						},
+						"description": "This endpoint is used to delete an existing user from the system based on their unique identifier (`:id`). Once a user is deleted, they are permanently removed from the database.\n\n#### Request\n\n- **Method**: DELETE\n    \n- **URL**: `http://localhost:8080/v1/users/:id`\n    \n    - **`:id`**: The unique identifier of the user to delete. Replace `:id` with the actual user ID.\n        \n\n#### Response\n\n- **Content-Type**: Not applicable (since the body might be empty or contain only a message)\n    \n- **Body**:\n    \n\n``` json\n{\n  \"message\": \"string\"\n}\n\n ```\n\n- **Fields**:\n    \n    - `message`: A message indicating the outcome of the operation. For a successful deletion, it typically says `\"deleted\"`.\n        \n\n#### Status Codes\n\n- **200 OK**: The request was successful, and the user has been deleted.\n    \n- **404 Not Found**: No user found with the given ID, meaning there's no user to delete.\n    \n- **403 Forbidden**: The request was understood, but it has been refused due to lack of permissions or other authorization constraints."
+					},
+					"response": [
+						{
+							"id": "dcc2d063-02de-4ba6-91bf-33dd99f2fe7a",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/users/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65cb97f5323f9a9019796f0f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "21"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15-p9+dxOLibAYwSbN2QN6jpmYKT9k\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:26:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"deleted\"\n}"
+						}
+					]
+				}
+			],
+			"id": "ebc501cd-25c5-4c7a-93c6-3abb993bbd8d",
+			"description": "Contains all requests related to users API."
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Create course",
+					"id": "9e21aad1-562f-46a1-b33d-3476448f6796",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\": \"65cb7eeedd32f95e37d06fa0\",\r\n    \"title\": \"C#\",\r\n    \"description\": \"C# (C-Sharp) is a programming language developed by Microsoft that run…\",\r\n    \"difficulty\": 2,\r\n    \"tags\": [\"Bestseller\"],\r\n    \"additionalMaterials\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/v1/courses",
+						"description": "This endpoint is used for creating a new course in the system. It requires the submission of course details such as the author's ID, title, description, difficulty level, tags, and any additional materials associated with the course.\n\n#### Request\n\n- **Method**: POST\n    \n- **URL**: `http://localhost:8080/v1/courses`\n    \n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n``` json\n{\n  \"author\": \"string\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"difficulty\": \"number\",\n  \"tags\": [\"string\"],\n  \"additionalMaterials\": [\"string\"]\n}\n ```\n\n- **Parameters**:\n    \n    - `author`: The unique identifier (ID) of the user who is creating the course.\n        \n    - `title`: The title of the course.\n        \n    - `description`: A brief description of the course content.\n        \n    - `difficulty`: A numerical indicator of the course's difficulty level.\n        \n    - `tags`: An array of strings representing tags associated with the course for categorization or search purposes.\n        \n    - `additionalMaterials`: An array of strings or objects providing links or references to additional materials related to the course. Initially, it can be an empty array.\n        \n\n#### Response\n\n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n```\n{\n  \"data\": {\n    \"author\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"difficulty\": \"number\",\n    \"tags\": [\"string\"],\n    \"additionalMaterials\": [\"string\"],\n    \"comments\": [\"string\"],\n    \"_id\": \"string\",\n    \"createdAt\": \"string\",\n    \"updatedAt\": \"string\",\n    \"__v\": \"number\"\n  },\n  \"message\": \"string\"\n}\n ```\n\nStartFragment\n\n- **Fields**:\n    \n    - `data`: An object containing the details of the newly created course.\n        \n        - `author`: The ID of the course author.\n            \n        - `title`: The title of the course.\n            \n        - `description`: The description of the course.\n            \n        - `difficulty`: The difficulty level of the course.\n            \n        - `tags`: An array of tags associated with the course.\n            \n        - `additionalMaterials`: An array of additional materials for the course.\n            \n        - `comments`: An array to store comments on the course, initially empty.\n            \n        - `_id`: The unique identifier for the created course.\n            \n        - `createdAt`: The timestamp when the course was created.\n            \n        - `updatedAt`: The timestamp when the course information was last updated.\n            \n        - `__v`: The version of the document in the database, used internally for handling document updates.\n            \n    - `message`: A message indicating the outcome of the operation. For a successful creation, it typically says `\"created\"`.\n        \n\n#### Status Codes\n\n- **201 Created**: The request was successful, and a new course was created.\n    \n- **400 Bad Request**: The request was malformed, such as missing required fields or invalid data types."
+					},
+					"response": [
+						{
+							"id": "123ce64f-268d-4cc1-8aad-64f57a43a8bd",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"author\": \"65cb7eeedd32f95e37d06fa0\",\r\n    \"title\": \"C#\",\r\n    \"description\": \"C# (C-Sharp) is a programming language developed by Microsoft that run…\",\r\n    \"difficulty\": 2,\r\n    \"tags\": [\"Bestseller\"],\r\n    \"additionalMaterials\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/v1/courses"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "364"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16c-12F7J6locczRAAK5PLm30B3fzAU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:28:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"data\": {\n        \"author\": \"65cb7eeedd32f95e37d06fa0\",\n        \"title\": \"C#\",\n        \"description\": \"C# (C-Sharp) is a programming language developed by Microsoft that run…\",\n        \"difficulty\": 2,\n        \"tags\": [\n            \"Bestseller\"\n        ],\n        \"additionalMaterials\": [],\n        \"comments\": [],\n        \"_id\": \"65cb98b9323f9a9019796f16\",\n        \"createdAt\": \"2024-02-13T16:28:41.596Z\",\n        \"updatedAt\": \"2024-02-13T16:28:41.596Z\",\n        \"__v\": 0\n    },\n    \"message\": \"created\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get course(s)",
+					"id": "dc1c8d7b-acfd-4c65-939f-a3c3adffccf5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/courses/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"courses",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65cb7fa7dd32f95e37d06fa2"
+								}
+							]
+						},
+						"description": "This endpoint retrieves course information from the system. It can be used in two modes: without specifying an ID to fetch a list of all courses, or with an ID to retrieve details about a specific course.\n\n#### Request Without Specifying ID\n\n- **Method**: GET\n    \n- **URL**: `http://localhost:8080/v1/courses`\n    \n- **Authentication**: Depending on the application's security policy, this endpoint may require authentication and appropriate permissions to access the list of courses.\n    \n\n#### Request With Specifying ID\n\n- **Method**: GET\n    \n- **URL**: `http://localhost:8080/v1/courses/:id`\n    \n    - **`:id`** **(optional)**: The unique identifier of the course to retrieve. Replace `:id` with the actual course ID.\n        \n\n#### Response\n\n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n```\n{\n  \"data\": [\n    {\n      \"_id\": \"string\",\n      \"author\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"difficulty\": \"number\",\n      \"tags\": [\"string\"],\n      \"additionalMaterials\": [\"string\"],\n      \"comments\": [\"string\"],\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\",\n      \"__v\": \"number\"\n    }\n  ],\n  \"message\": \"string\"\n}\n\n ```\n\n- **Fields**:\n    \n    - `data`: An array of course objects (when ID is not specified) or a single course object (when ID is specified).\n        \n        - `_id`: The unique identifier for the course.\n            \n        - `author`: The ID of the user who authored the course.\n            \n        - `title`: The title of the course.\n            \n        - `description`: A detailed description of what the course covers.\n            \n        - `difficulty`: The difficulty level of the course.\n            \n        - `tags`: An array of tags related to the course for easier categorization and search.\n            \n        - `additionalMaterials`: An array of links or references to additional materials for the course.\n            \n        - `comments`: An array to store comments related to the course.\n            \n        - `createdAt`: The timestamp when the course was created.\n            \n        - `updatedAt`: The timestamp when the course information was last updated.\n            \n        - `__v`: The version of the document in the database, used internally for handling document updates.\n            \n    - `message`: A message indicating the outcome of the operation. For successful retrieval, it typically says `\"received\"`.\n        \n\n#### Status Codes\n\n- **200 OK**: The request was successful, and the course(s) data is returned.\n    \n- **400 Bad Request**: The request was malformed, such as missing required fields.\n    \n- **404 Not Found**: No course found with the given ID (when ID is specified)."
+					},
+					"response": [
+						{
+							"id": "14e30053-aca9-4062-bc47-1f16f0b71c14",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/v1/courses"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1613"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64d-tbLWrUixFIXD0TLLHTlnNv8o7iI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:31:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"65c900b8419e873014847148\",\n            \"author\": \"65c8e4ff77e3c5cf9602741b\",\n            \"title\": \"C#\",\n            \"description\": \"C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework. C# is used to develop web apps, desktop apps, mobile apps, games and much more\",\n            \"difficulty\": 2,\n            \"tags\": [],\n            \"additionalMaterials\": [],\n            \"createdAt\": \"2024-02-11T17:15:36.541Z\",\n            \"updatedAt\": \"2024-02-11T19:30:04.810Z\",\n            \"__v\": 0,\n            \"comments\": []\n        },\n        {\n            \"_id\": \"65cb7fa7dd32f95e37d06fa2\",\n            \"author\": \"65cb7eeedd32f95e37d06fa0\",\n            \"title\": \"Learn To Program with Delphi and Object Pascal\",\n            \"description\": \"Master Object Pascal programming with Lazarus or Delphi\",\n            \"difficulty\": 1,\n            \"tags\": [\n                \"Programming\",\n                \"Pascal\",\n                \"Bestseller\"\n            ],\n            \"additionalMaterials\": [],\n            \"comments\": [],\n            \"createdAt\": \"2024-02-13T14:41:43.371Z\",\n            \"updatedAt\": \"2024-02-13T14:41:43.371Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65cb880aa9e2940656e81199\",\n            \"author\": \"65cb7eeedd32f95e37d06fa0\",\n            \"title\": \"Docker & Kubernetes: The Practical Guide [2024 Edition]\",\n            \"description\": \"Learn Docker, Docker Compose, Multi-Container Projects, Deployment and all about Kubernetes from the ground up!\",\n            \"difficulty\": 2,\n            \"tags\": [\n                \"English\",\n                \"Bestseller\"\n            ],\n            \"additionalMaterials\": [],\n            \"comments\": [],\n            \"createdAt\": \"2024-02-13T15:17:30.127Z\",\n            \"updatedAt\": \"2024-02-13T15:23:44.692Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65cb98b9323f9a9019796f16\",\n            \"author\": \"65cb7eeedd32f95e37d06fa0\",\n            \"title\": \"C#\",\n            \"description\": \"C# (C-Sharp) is a programming language developed by Microsoft that run…\",\n            \"difficulty\": 2,\n            \"tags\": [\n                \"Bestseller\"\n            ],\n            \"additionalMaterials\": [],\n            \"comments\": [],\n            \"createdAt\": \"2024-02-13T16:28:41.596Z\",\n            \"updatedAt\": \"2024-02-13T16:28:41.596Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"received\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete course",
+					"id": "c868665a-f6b4-42b5-93e0-2d606414e39e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/courses/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"courses",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65cb9abdb77d145daf2d9c7d"
+								}
+							]
+						},
+						"description": "This endpoint is used to delete an existing course from the system based on its unique identifier (`:id`). Once a course is deleted, it is permanently removed from the database along with any associated data.\n\n#### Request\n\n- **Method**: DELETE\n    \n- **URL**: `http://localhost:8080/v1/courses/:id`\n    \n    - **`:id`**: The unique identifier of the course to delete. Replace `:id` with the actual course ID.\n        \n\n#### Response\n\n- **Content-Type**: `application/json` (though the body might be minimal)\n    \n- **Body**:\n    \n\n```\n{\n  \"message\": \"string\"\n}\n ```\n\n- **Fields**:\n    \n    - `message`: A message indicating the outcome of the operation. For a successful deletion, it typically says `\"deleted\"`.\n        \n\n#### Status Codes\n\n- **200 OK**: The request was successful, and the course has been deleted.\n    \n- **400 Bad Request**: The request was malformed, such as missing required fields.\n    \n- **404 Not Found**: No course found with the given ID, meaning there's no course to delete."
+					},
+					"response": [
+						{
+							"id": "713d3541-595b-4b34-a221-3265b1800e88",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/courses/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"courses",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65cb9abdb77d145daf2d9c7d"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "21"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15-p9+dxOLibAYwSbN2QN6jpmYKT9k\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:37:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update course",
+					"id": "227df90c-46e3-40b8-880e-404d400c4bd3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Docker & Kubernetes: The Practical Guide [2024 Edition]\",\r\n    \"description\": \"Learn Docker, Docker Compose, Multi-Container Projects, Deployment and all about Kubernetes from the ground up!\",\r\n    \"tags\": [\"English\", \"Bestseller\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/courses/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"courses",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65cb880aa9e2940656e81199"
+								}
+							]
+						},
+						"description": "This endpoint is used for updating an existing course in the system identified by its unique identifier (`:id`). It allows partial updates, meaning only the fields provided in the request body will be updated.\n\n#### Request\n\n- **Method**: PUT\n    \n- **URL**: `http://localhost:8080/v1/courses/:id`\n    \n    - **`:id`**: The unique identifier of the course to update. Replace `:id` with the actual course ID.\n        \n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n```\n{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"tags\": [\"string\"]\n}\n\n ```\n\n- **Parameters**:\n    \n    - `title`: The new title of the course. This field is optional for the update.\n        \n    - `description`: The new description of the course. This field is optional for the update.\n        \n    - `tags`: The new array of tags related to the course. This field is optional for the update.\n        \n\n#### Response\n\n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n```\n{\n  \"data\": {\n    \"_id\": \"string\",\n    \"author\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"difficulty\": \"number\",\n    \"tags\": [\"string\"],\n    \"additionalMaterials\": [\"string\"],\n    \"comments\": [\"string\"],\n    \"createdAt\": \"string\",\n    \"updatedAt\": \"string\",\n    \"__v\": \"number\"\n  },\n  \"message\": \"string\"\n}\n\n ```\n\n- **Fields**:\n    \n    - `data`: An object containing the updated details of the course.\n        \n        - `_id`: The unique identifier for the course.\n            \n        - `author`: The ID of the user who authored the course. This field is not typically updated through this endpoint.\n            \n        - `title`: The updated title of the course.\n            \n        - `description`: The updated description of the course.\n            \n        - `difficulty`: The difficulty level of the course, which may not be updated through this particular request unless included.\n            \n        - `tags`: The updated array of tags related to the course.\n            \n        - `additionalMaterials`: An array of links or references to additional materials for the course, not necessarily updated in this request.\n            \n        - `comments`: An array to store comments related to the course, not directly updated through this endpoint.\n            \n        - `createdAt`: The timestamp when the course was initially created, not altered by updates.\n            \n        - `updatedAt`: The timestamp when the course information was last updated.\n            \n        - `__v`: The version of the document in the database, used internally for handling document updates.\n            \n    - `message`: A message indicating the outcome of the operation. For a successful update, it typically says `\"updated\"`.\n        \n\n#### Status Codes\n\n- **200 OK**: The request was successful, and the course details were updated.\n    \n- **400 Bad Request**: The request was malformed, such as missing fields or invalid data types.\n    \n- **404 Not Found**: No course found with the given ID."
+					},
+					"response": [
+						{
+							"id": "71ca25f3-d96d-41d3-9e3f-7447e7a142c6",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Docker & Kubernetes: The Practical Guide [2024 Edition]\",\r\n    \"description\": \"Learn Docker, Docker Compose, Multi-Container Projects, Deployment and all about Kubernetes from the ground up!\",\r\n    \"tags\": [\"English\", \"Bestseller\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/v1/courses/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"courses",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65cb880aa9e2940656e81199"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "465"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d1-3ftgoUHI9OXad/PYTk9PS97koBg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:38:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"data\": {\n        \"_id\": \"65cb880aa9e2940656e81199\",\n        \"author\": \"65cb7eeedd32f95e37d06fa0\",\n        \"title\": \"Docker & Kubernetes: The Practical Guide [2024 Edition]\",\n        \"description\": \"Learn Docker, Docker Compose, Multi-Container Projects, Deployment and all about Kubernetes from the ground up!\",\n        \"difficulty\": 2,\n        \"tags\": [\n            \"English\",\n            \"Bestseller\"\n        ],\n        \"additionalMaterials\": [],\n        \"comments\": [],\n        \"createdAt\": \"2024-02-13T15:17:30.127Z\",\n        \"updatedAt\": \"2024-02-13T16:38:03.417Z\",\n        \"__v\": 0\n    },\n    \"message\": \"updated\"\n}"
+						}
+					]
+				}
+			],
+			"id": "95739804-420a-4edb-a8ad-bf63200ad22b",
+			"description": "Contains all requests related to courses API."
+		}
+	]
+}
