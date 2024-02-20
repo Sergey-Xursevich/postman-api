@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "328d5a2d-669f-4a5f-bc4a-40e4d1201330",
+		"_postman_id": "a3c7a292-97b4-44b8-83ed-28b8d989af20",
 		"name": "SchoolarSync",
 		"description": "This comprehensive guide is designed to assist developers in impleenting and integrating the functionalities provided by API seamlessly. Here you can find documentation will guide you through the various endpoints, parameters, and methods to help you make the most out of API.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "32947078-a3c7a292-97b4-44b8-83ed-28b8d989af20"
 	},
 	"item": [
 		{
@@ -15,7 +16,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "14958a2b-aae8-4b4f-af41-c91bc7895855",
+								"id": "b6a6cd94-f277-4dd6-82e0-8436be968ff2",
 								"exec": [
 									"// status code check and content-type\r",
 									"pm.test(\"Status code is 200 and content-type is JSON\", () => {\r",
@@ -27,7 +28,7 @@
 							}
 						}
 					],
-					"id": "ee16360a-8b52-4bcc-9af1-2cc856aee585",
+					"id": "6ad93e79-ae54-4bb9-bd24-52c4d2459818",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -43,13 +44,22 @@
 								}
 							}
 						},
-						"url": "{{baseurl}}/v1/signup"
+						"url": {
+							"raw": "{{baseurl}}/v1/signup",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"signup"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Log in",
-					"id": "47cef1b5-ab8a-4c6c-8239-05bc2534529c",
+					"id": "0f5a5f70-152e-44ce-ae7e-ed66ddafac88",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -65,13 +75,22 @@
 								}
 							}
 						},
-						"url": "{{baseurl}}/v1/login"
+						"url": {
+							"raw": "{{baseurl}}/v1/login",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"login"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Log out",
-					"id": "89ca5b99-b128-4c66-b6e1-09b2b6c0e184",
+					"id": "6b5225b0-577e-4ca3-939f-07ed48f0c582",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -87,19 +106,28 @@
 								}
 							}
 						},
-						"url": "{{baseurl}}/v1/logout"
+						"url": {
+							"raw": "{{baseurl}}/v1/logout",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"logout"
+							]
+						}
 					},
 					"response": []
 				}
 			],
-			"id": "e4f966c6-ac6c-4ec2-b7e6-c39b3416eacb"
+			"id": "3fea5653-2ae4-45ce-aad6-fc573478bf3b"
 		},
 		{
 			"name": "Users",
 			"item": [
 				{
 					"name": "Create user",
-					"id": "d889f11c-90ab-43c0-95f9-d9bf820e5853",
+					"id": "fe962e2c-47a5-448e-ae6f-b7c135de87f9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -115,12 +143,21 @@
 								}
 							}
 						},
-						"url": "{{baseurl}}/v1/users",
+						"url": {
+							"raw": "{{baseurl}}/v1/users",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						},
 						"description": "This endpoint allows the creation of a new user in the system. It accepts user details in the request body and returns the created user's data along with a success message.\n\n#### Request\n\n- **Method**: POST\n    \n- **URL**: `http://localhost:8080/v1/users`\n    \n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n``` json\n{\n  \"username\": \"string\",\n  \"password\": \"string\",\n  \"role\": \"number\"\n}\n\n ```\n\n- **Parameters**:\n    \n    - `username`: The username of the new user. Must be a string.\n        \n    - `password`: The password for the new user. Must be a string that meets the system's password requirements.\n        \n    - `role`: The role assigned to the user. Must be a number. The meaning of this number (e.g., admin, user, etc.) should be defined according to the system's roles.\n        \n\n#### Response\n\n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n``` json\n{\n  \"data\": {\n    \"username\": \"string\",\n    \"password\": \"string\",\n    \"role\": \"number\",\n    \"availableCourses\": \"array\",\n    \"_id\": \"string\",\n    \"createdAt\": \"string\",\n    \"updatedAt\": \"string\",\n    \"__v\": \"number\"\n  },\n  \"message\": \"string\"\n}\n\n ```\n\n- **Fields**:\n    \n    - `data`: An object containing the created user's details.\n        \n        - `username`: The username of the created user.\n            \n        - `password`: The password of the created user. It's returned in the response for completeness, but it's recommended to not expose passwords in responses for security reasons.\n            \n        - `role`: The role number assigned to the user.\n            \n        - `availableCourses`: An array of courses available to the user. Initially empty for new users.\n            \n        - `_id`: The unique identifier for the created user.\n            \n        - `createdAt`: The timestamp when the user was created.\n            \n        - `updatedAt`: The timestamp when the user's information was last updated. Initially, it's the same as `createdAt`.\n            \n        - `__v`: The version of the document in the database. Used internally for handling document updates.\n            \n- `message`: A message indicating the outcome of the operation. For a successful creation, it typically says `\"created\"`.\n    \n\n#### Status Codes\n\n- **201 Created**: The request was successful, and a new user was created.\n    \n- **400 Bad Request**: The request was malformed. This status is returned if the request body does not contain the required fields or the field values do not meet the specifications (e.g., password strength requirements).\n    \n- **409 Conflict**: A user with the given username already exists."
 					},
 					"response": [
 						{
-							"id": "9d47e26e-7b7c-4aa0-9831-b583b08f8568",
+							"id": "42f8c00a-0206-44db-9c97-ad3f2162e141",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "POST",
@@ -134,11 +171,21 @@
 										}
 									}
 								},
-								"url": "{{baseurl}}/v1/users"
+								"url": {
+									"raw": "{{baseurl}}/v1/users",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"v1",
+										"users"
+									]
+								}
 							},
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -177,7 +224,7 @@
 				},
 				{
 					"name": "Create user Copy",
-					"id": "6d4a4fdb-a20a-4328-87b1-f6cf948df1c5",
+					"id": "2ee9e3f4-2789-49be-8041-1d178b95b9da",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -193,12 +240,21 @@
 								}
 							}
 						},
-						"url": "{{baseurl}}/v1/users",
+						"url": {
+							"raw": "{{baseurl}}/v1/users",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						},
 						"description": "This endpoint allows the creation of a new user in the system. It accepts user details in the request body and returns the created user's data along with a success message.\n\n#### Request\n\n- **Method**: POST\n    \n- **URL**: `http://localhost:8080/v1/users`\n    \n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n``` json\n{\n  \"username\": \"string\",\n  \"password\": \"string\",\n  \"role\": \"number\"\n}\n\n ```\n\n- **Parameters**:\n    \n    - `username`: The username of the new user. Must be a string.\n        \n    - `password`: The password for the new user. Must be a string that meets the system's password requirements.\n        \n    - `role`: The role assigned to the user. Must be a number. The meaning of this number (e.g., admin, user, etc.) should be defined according to the system's roles.\n        \n\n#### Response\n\n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n``` json\n{\n  \"data\": {\n    \"username\": \"string\",\n    \"password\": \"string\",\n    \"role\": \"number\",\n    \"availableCourses\": \"array\",\n    \"_id\": \"string\",\n    \"createdAt\": \"string\",\n    \"updatedAt\": \"string\",\n    \"__v\": \"number\"\n  },\n  \"message\": \"string\"\n}\n\n ```\n\n- **Fields**:\n    \n    - `data`: An object containing the created user's details.\n        \n        - `username`: The username of the created user.\n            \n        - `password`: The password of the created user. It's returned in the response for completeness, but it's recommended to not expose passwords in responses for security reasons.\n            \n        - `role`: The role number assigned to the user.\n            \n        - `availableCourses`: An array of courses available to the user. Initially empty for new users.\n            \n        - `_id`: The unique identifier for the created user.\n            \n        - `createdAt`: The timestamp when the user was created.\n            \n        - `updatedAt`: The timestamp when the user's information was last updated. Initially, it's the same as `createdAt`.\n            \n        - `__v`: The version of the document in the database. Used internally for handling document updates.\n            \n- `message`: A message indicating the outcome of the operation. For a successful creation, it typically says `\"created\"`.\n    \n\n#### Status Codes\n\n- **201 Created**: The request was successful, and a new user was created.\n    \n- **400 Bad Request**: The request was malformed. This status is returned if the request body does not contain the required fields or the field values do not meet the specifications (e.g., password strength requirements).\n    \n- **409 Conflict**: A user with the given username already exists."
 					},
 					"response": [
 						{
-							"id": "c8829be5-8afc-4ed0-850c-81ee1709754b",
+							"id": "c0982534-04f3-4d0a-b421-026275f61383",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "POST",
@@ -212,11 +268,21 @@
 										}
 									}
 								},
-								"url": "{{baseurl}}/v1/users"
+								"url": {
+									"raw": "{{baseurl}}/v1/users",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"v1",
+										"users"
+									]
+								}
 							},
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -255,28 +321,51 @@
 				},
 				{
 					"name": "Get users",
-					"id": "66e6f09d-8d80-4cb5-b079-71b01511008e",
+					"id": "aecdba00-e327-4550-8205-800b7043a6e7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/v1/users",
+						"url": {
+							"raw": "http://localhost:8080/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"users"
+							]
+						},
 						"description": "This endpoint retrieves a list of all users registered in the system. It returns an array of user objects, each containing the details of a user, including their unique identifier, username, role, available courses, and timestamps for creation and last update.\n\n#### Request\n\n- **Method**: GET\n- **URL**: `http://localhost:8080/v1/users`\n    \n\n#### Response\n\n- **Content-Type**: `application/json`\n- **Body**:\n    \n\n``` json\n{\n  \"data\": [\n    {\n      \"_id\": \"string\",\n      \"username\": \"string\",\n      \"password\": \"string\",\n      \"role\": \"number\",\n      \"availableCourses\": \"array\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\",\n      \"__v\": \"number\"\n    }\n  ],\n  \"message\": \"string\"\n}\n\n ```\n\n- **Fields**:\n- `data`: An array of user objects.\n    - `_id`: The unique identifier for the user.\n    - `username`: The username of the user.\n    - `password`: The password of the user. As a security best practice, consider removing or hashing passwords when sending over networks.\n    - `role`: The role number assigned to the user. The meaning of the role number should be defined according to the system's roles.\n    - `availableCourses`: An array of courses available to the user. May be empty.\n    - `createdAt`: The timestamp when the user was created.\n    - `updatedAt`: The timestamp when the user's information was last updated.\n    - `__v`: The version of the document in the database. Used internally for handling document updates.\n- `message`: A message indicating the outcome of the operation. For a successful retrieval, it typically says `\"received\"`.\n    \n\n#### Status Codes\n\n- **200 OK**: The request was successful, and the list of users is returned.\n- **400 Bad Request**: The request was malformed. This status is returned if the request body does not contain the required fields or the field values do not meet the specifications (e.g., password strength requirements)."
 					},
 					"response": [
 						{
-							"id": "2a23b0d5-0406-420c-a566-0d7eb111a6a8",
+							"id": "fa546678-0a3c-4b76-87ff-f429993bd41f",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": "http://localhost:8080/v1/users"
+								"url": {
+									"raw": "http://localhost:8080/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"users"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -315,7 +404,7 @@
 				},
 				{
 					"name": "Update user",
-					"id": "35a7b734-cbfa-40cf-ae28-7b2e647d73cb",
+					"id": "534baa8d-49db-42a9-b0bf-822885efb3a9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -345,7 +434,6 @@
 							],
 							"variable": [
 								{
-									"id": "f8bc711a-20c8-4a32-905f-8ffdac88fb51",
 									"key": "id",
 									"value": "65ca83b71834f1a314f31c0f"
 								}
@@ -355,7 +443,7 @@
 					},
 					"response": [
 						{
-							"id": "5c8d84ae-807c-4e45-b998-48d7a524af87",
+							"id": "253ba875-d55f-4197-9de8-bd95547e70a4",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "PUT",
@@ -383,7 +471,6 @@
 									],
 									"variable": [
 										{
-											"id": "f8bc711a-20c8-4a32-905f-8ffdac88fb51",
 											"key": "id",
 											"value": "65ca83b71834f1a314f31c0f"
 										}
@@ -393,6 +480,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -431,7 +519,7 @@
 				},
 				{
 					"name": "Delete user",
-					"id": "138acfbe-233c-4b51-900e-027b765af759",
+					"id": "9257d668-0b6e-4d33-8aed-5c4f2a93f462",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -461,7 +549,7 @@
 					},
 					"response": [
 						{
-							"id": "dcc2d063-02de-4ba6-91bf-33dd99f2fe7a",
+							"id": "c6a82813-d6c7-415e-b705-5ff1b849aa7d",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "DELETE",
@@ -489,6 +577,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -526,7 +615,7 @@
 					]
 				}
 			],
-			"id": "ebc501cd-25c5-4c7a-93c6-3abb993bbd8d",
+			"id": "c3ac0912-50db-4798-a80f-f71cb83c239e",
 			"description": "Contains all requests related to users API."
 		},
 		{
@@ -534,7 +623,7 @@
 			"item": [
 				{
 					"name": "Create course",
-					"id": "9e21aad1-562f-46a1-b33d-3476448f6796",
+					"id": "9b3551ef-7e7a-437f-8193-7113e476a3f2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -550,12 +639,23 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/v1/courses",
+						"url": {
+							"raw": "http://localhost:8080/v1/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"courses"
+							]
+						},
 						"description": "This endpoint is used for creating a new course in the system. It requires the submission of course details such as the author's ID, title, description, difficulty level, tags, and any additional materials associated with the course.\n\n#### Request\n\n- **Method**: POST\n    \n- **URL**: `http://localhost:8080/v1/courses`\n    \n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n``` json\n{\n  \"author\": \"string\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"difficulty\": \"number\",\n  \"tags\": [\"string\"],\n  \"additionalMaterials\": [\"string\"]\n}\n ```\n\n- **Parameters**:\n    \n    - `author`: The unique identifier (ID) of the user who is creating the course.\n        \n    - `title`: The title of the course.\n        \n    - `description`: A brief description of the course content.\n        \n    - `difficulty`: A numerical indicator of the course's difficulty level.\n        \n    - `tags`: An array of strings representing tags associated with the course for categorization or search purposes.\n        \n    - `additionalMaterials`: An array of strings or objects providing links or references to additional materials related to the course. Initially, it can be an empty array.\n        \n\n#### Response\n\n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n```\n{\n  \"data\": {\n    \"author\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"difficulty\": \"number\",\n    \"tags\": [\"string\"],\n    \"additionalMaterials\": [\"string\"],\n    \"comments\": [\"string\"],\n    \"_id\": \"string\",\n    \"createdAt\": \"string\",\n    \"updatedAt\": \"string\",\n    \"__v\": \"number\"\n  },\n  \"message\": \"string\"\n}\n ```\n\nStartFragment\n\n- **Fields**:\n    \n    - `data`: An object containing the details of the newly created course.\n        \n        - `author`: The ID of the course author.\n            \n        - `title`: The title of the course.\n            \n        - `description`: The description of the course.\n            \n        - `difficulty`: The difficulty level of the course.\n            \n        - `tags`: An array of tags associated with the course.\n            \n        - `additionalMaterials`: An array of additional materials for the course.\n            \n        - `comments`: An array to store comments on the course, initially empty.\n            \n        - `_id`: The unique identifier for the created course.\n            \n        - `createdAt`: The timestamp when the course was created.\n            \n        - `updatedAt`: The timestamp when the course information was last updated.\n            \n        - `__v`: The version of the document in the database, used internally for handling document updates.\n            \n    - `message`: A message indicating the outcome of the operation. For a successful creation, it typically says `\"created\"`.\n        \n\n#### Status Codes\n\n- **201 Created**: The request was successful, and a new course was created.\n    \n- **400 Bad Request**: The request was malformed, such as missing required fields or invalid data types."
 					},
 					"response": [
 						{
-							"id": "123ce64f-268d-4cc1-8aad-64f57a43a8bd",
+							"id": "fd67a5fc-ddb3-49a3-9daa-0a32fc7c1df4",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "POST",
@@ -569,11 +669,23 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/v1/courses"
+								"url": {
+									"raw": "http://localhost:8080/v1/courses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"courses"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -612,7 +724,7 @@
 				},
 				{
 					"name": "Get course(s)",
-					"id": "dc1c8d7b-acfd-4c65-939f-a3c3adffccf5",
+					"id": "6876b508-cd21-42cd-b96b-27038631608e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -642,16 +754,28 @@
 					},
 					"response": [
 						{
-							"id": "14e30053-aca9-4062-bc47-1f16f0b71c14",
+							"id": "52236583-e1e3-4649-b7bc-d836e0c68980",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": "http://localhost:8080/v1/courses"
+								"url": {
+									"raw": "http://localhost:8080/v1/courses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"courses"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -690,7 +814,7 @@
 				},
 				{
 					"name": "Delete course",
-					"id": "c868665a-f6b4-42b5-93e0-2d606414e39e",
+					"id": "1eba9991-a200-4b38-9f38-14d18b87fec0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -720,7 +844,7 @@
 					},
 					"response": [
 						{
-							"id": "713d3541-595b-4b34-a221-3265b1800e88",
+							"id": "a92c3889-31e6-4d51-b2ac-edca6ad83e6a",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "DELETE",
@@ -748,6 +872,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -786,7 +911,7 @@
 				},
 				{
 					"name": "Update course",
-					"id": "227df90c-46e3-40b8-880e-404d400c4bd3",
+					"id": "75511e83-4391-423c-84d6-adc7b54fbb22",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -825,7 +950,7 @@
 					},
 					"response": [
 						{
-							"id": "71ca25f3-d96d-41d3-9e3f-7447e7a142c6",
+							"id": "cbeff240-6ac8-42b5-a650-21c0d5125de7",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "PUT",
@@ -862,6 +987,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -899,7 +1025,7 @@
 					]
 				}
 			],
-			"id": "95739804-420a-4edb-a8ad-bf63200ad22b",
+			"id": "a5ac6a67-b05d-4f79-9484-28cbbb59e122",
 			"description": "Contains all requests related to courses API."
 		}
 	]
