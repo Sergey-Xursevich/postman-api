@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "a3c7a292-97b4-44b8-83ed-28b8d989af20",
+		"_postman_id": "d865f10b-fa0f-4227-b2fb-dacedbb15bfa",
 		"name": "SchoolarSync",
 		"description": "This comprehensive guide is designed to assist developers in impleenting and integrating the functionalities provided by API seamlessly. Here you can find documentation will guide you through the various endpoints, parameters, and methods to help you make the most out of API.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "32947078-a3c7a292-97b4-44b8-83ed-28b8d989af20"
+		"_uid": "33146375-d865f10b-fa0f-4227-b2fb-dacedbb15bfa"
 	},
 	"item": [
 		{
@@ -16,7 +16,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b6a6cd94-f277-4dd6-82e0-8436be968ff2",
+								"id": "56bcd19d-8cbc-477a-9a72-c0378ef2820e",
 								"exec": [
 									"// status code check and content-type\r",
 									"pm.test(\"Status code is 200 and content-type is JSON\", () => {\r",
@@ -28,7 +28,7 @@
 							}
 						}
 					],
-					"id": "6ad93e79-ae54-4bb9-bd24-52c4d2459818",
+					"id": "1eef3f91-10a4-4c12-8713-365a3b635624",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -63,7 +63,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b6a6cd94-f277-4dd6-82e0-8436be968ff2",
+								"id": "0fb56733-266d-4cc2-a110-75f7cd573268",
 								"exec": [
 									"// status code check and content-type\r",
 									"pm.test(\"Status code is 200 and content-type is JSON\", () => {\r",
@@ -75,7 +75,7 @@
 							}
 						}
 					],
-					"id": "91062f25-2a9a-4634-8dbf-87e8f413036b",
+					"id": "f249ffb3-b1b0-4aec-af52-bad76ce3819d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -106,7 +106,7 @@
 				},
 				{
 					"name": "Log in",
-					"id": "0f5a5f70-152e-44ce-ae7e-ed66ddafac88",
+					"id": "acac7fd7-fd1a-4d92-91bf-de8c14d21466",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -137,7 +137,7 @@
 				},
 				{
 					"name": "Log out",
-					"id": "6b5225b0-577e-4ca3-939f-07ed48f0c582",
+					"id": "ea99ea12-a88d-4678-9d42-3bcc40081299",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -167,14 +167,14 @@
 					"response": []
 				}
 			],
-			"id": "3fea5653-2ae4-45ce-aad6-fc573478bf3b"
+			"id": "d0fee410-8f45-4e71-9112-ff0bc1be0379"
 		},
 		{
 			"name": "Users",
 			"item": [
 				{
 					"name": "Create user",
-					"id": "fe962e2c-47a5-448e-ae6f-b7c135de87f9",
+					"id": "a304beaa-bfc6-408f-9d3d-91cba22326bf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -204,7 +204,7 @@
 					},
 					"response": [
 						{
-							"id": "42f8c00a-0206-44db-9c97-ad3f2162e141",
+							"id": "d8fb9885-35d2-451f-a7ef-94be0a3e65b1",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "POST",
@@ -232,6 +232,7 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -269,7 +270,7 @@
 				},
 				{
 					"name": "Create user Copy",
-					"id": "2ee9e3f4-2789-49be-8041-1d178b95b9da",
+					"id": "19edf53e-8069-4fc2-867d-d8fd9ea25f5a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -299,7 +300,7 @@
 					},
 					"response": [
 						{
-							"id": "c0982534-04f3-4d0a-b421-026275f61383",
+							"id": "b51c1fac-96d3-499e-ba48-281c885b4219",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "POST",
@@ -327,6 +328,7 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -364,7 +366,7 @@
 				},
 				{
 					"name": "Get users",
-					"id": "aecdba00-e327-4550-8205-800b7043a6e7",
+					"id": "c15cd91d-bfb9-4318-8639-e7821f6d0050",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -387,7 +389,7 @@
 					},
 					"response": [
 						{
-							"id": "fa546678-0a3c-4b76-87ff-f429993bd41f",
+							"id": "95146a65-1f13-4a09-affb-fc8e23da0169",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "GET",
@@ -408,6 +410,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -445,7 +448,7 @@
 				},
 				{
 					"name": "Update user",
-					"id": "534baa8d-49db-42a9-b0bf-822885efb3a9",
+					"id": "93b6479a-2da5-4947-aab7-614fbf9d09c4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -484,7 +487,7 @@
 					},
 					"response": [
 						{
-							"id": "253ba875-d55f-4197-9de8-bd95547e70a4",
+							"id": "116f3dd2-cc08-4d61-ba65-c17142011644",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "PUT",
@@ -521,6 +524,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -558,7 +562,7 @@
 				},
 				{
 					"name": "Delete user",
-					"id": "9257d668-0b6e-4d33-8aed-5c4f2a93f462",
+					"id": "d738dc89-2a3f-446e-b94e-e76ef75b91c3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -588,7 +592,7 @@
 					},
 					"response": [
 						{
-							"id": "c6a82813-d6c7-415e-b705-5ff1b849aa7d",
+							"id": "42a75e68-af7f-4dbc-afa3-f0f749d5d4c0",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "DELETE",
@@ -616,6 +620,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -652,7 +657,7 @@
 					]
 				}
 			],
-			"id": "c3ac0912-50db-4798-a80f-f71cb83c239e",
+			"id": "1f7e9669-0ea9-414f-88c4-a3e4b5ce021f",
 			"description": "Contains all requests related to users API."
 		},
 		{
@@ -660,7 +665,7 @@
 			"item": [
 				{
 					"name": "Create course",
-					"id": "9b3551ef-7e7a-437f-8193-7113e476a3f2",
+					"id": "474545bf-87dd-4fc8-8b35-5373988df8a0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -692,7 +697,7 @@
 					},
 					"response": [
 						{
-							"id": "fd67a5fc-ddb3-49a3-9daa-0a32fc7c1df4",
+							"id": "d60f380c-8692-43cd-bb58-faa7ab165a4a",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "POST",
@@ -722,6 +727,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -759,7 +765,7 @@
 				},
 				{
 					"name": "Get course(s)",
-					"id": "6876b508-cd21-42cd-b96b-27038631608e",
+					"id": "734b3b7f-b8b7-4563-a59b-a1ccb0bba2a3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -789,7 +795,7 @@
 					},
 					"response": [
 						{
-							"id": "52236583-e1e3-4649-b7bc-d836e0c68980",
+							"id": "96931174-0011-4fc1-a02b-2297500d0378",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "GET",
@@ -810,6 +816,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -847,7 +854,7 @@
 				},
 				{
 					"name": "Delete course",
-					"id": "1eba9991-a200-4b38-9f38-14d18b87fec0",
+					"id": "56b4c61c-37f2-455f-b79f-9241a7022a99",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -877,7 +884,7 @@
 					},
 					"response": [
 						{
-							"id": "a92c3889-31e6-4d51-b2ac-edca6ad83e6a",
+							"id": "3b7683a7-7125-4124-8c71-bec97140d837",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "DELETE",
@@ -905,6 +912,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -942,7 +950,7 @@
 				},
 				{
 					"name": "Update course",
-					"id": "75511e83-4391-423c-84d6-adc7b54fbb22",
+					"id": "97b58742-bae8-4f92-94b4-a8c0e157e888",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -981,7 +989,7 @@
 					},
 					"response": [
 						{
-							"id": "cbeff240-6ac8-42b5-a650-21c0d5125de7",
+							"id": "612c0d76-46fa-4857-935d-45a629e569ed",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "PUT",
@@ -1018,6 +1026,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -1054,7 +1063,7 @@
 					]
 				}
 			],
-			"id": "a5ac6a67-b05d-4f79-9484-28cbbb59e122",
+			"id": "38b4a89b-dc4c-440b-b3cb-3a45317df337",
 			"description": "Contains all requests related to courses API."
 		}
 	]
