@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "d865f10b-fa0f-4227-b2fb-dacedbb15bfa",
+		"_postman_id": "a12a969b-ecde-41d2-a19a-b449e0b8d2cc",
 		"name": "SchoolarSync",
 		"description": "This comprehensive guide is designed to assist developers in impleenting and integrating the functionalities provided by API seamlessly. Here you can find documentation will guide you through the various endpoints, parameters, and methods to help you make the most out of API.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "33146375-d865f10b-fa0f-4227-b2fb-dacedbb15bfa"
+		"_uid": "32947078-a12a969b-ecde-41d2-a19a-b449e0b8d2cc"
 	},
 	"item": [
 		{
@@ -16,7 +16,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "56bcd19d-8cbc-477a-9a72-c0378ef2820e",
+								"id": "b68308d8-0ec0-4895-8d26-2af669c9ce33",
 								"exec": [
 									"// status code check and content-type\r",
 									"pm.test(\"Status code is 200 and content-type is JSON\", () => {\r",
@@ -28,7 +28,7 @@
 							}
 						}
 					],
-					"id": "1eef3f91-10a4-4c12-8713-365a3b635624",
+					"id": "e8c35587-dc3e-434e-8438-6cc955e09073",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -63,7 +63,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0fb56733-266d-4cc2-a110-75f7cd573268",
+								"id": "04a8a154-27fc-4b0d-a232-0c2f630b11f0",
 								"exec": [
 									"// status code check and content-type\r",
 									"pm.test(\"Status code is 200 and content-type is JSON\", () => {\r",
@@ -75,7 +75,7 @@
 							}
 						}
 					],
-					"id": "f249ffb3-b1b0-4aec-af52-bad76ce3819d",
+					"id": "40ac48b9-37fd-444f-80c7-28c9eae6b73f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -106,7 +106,7 @@
 				},
 				{
 					"name": "Log in",
-					"id": "acac7fd7-fd1a-4d92-91bf-de8c14d21466",
+					"id": "b4cfac87-8795-4c37-9eb9-b650521ef253",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -137,7 +137,7 @@
 				},
 				{
 					"name": "Log out",
-					"id": "ea99ea12-a88d-4678-9d42-3bcc40081299",
+					"id": "59c58b54-d8c5-4042-a50f-8570001f58c5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -167,14 +167,14 @@
 					"response": []
 				}
 			],
-			"id": "d0fee410-8f45-4e71-9112-ff0bc1be0379"
+			"id": "d76e19c9-e641-4d97-9dff-f0f75d966827"
 		},
 		{
 			"name": "Users",
 			"item": [
 				{
 					"name": "Create user",
-					"id": "a304beaa-bfc6-408f-9d3d-91cba22326bf",
+					"id": "83243f54-7d55-4a79-86d9-b6ddd63c5c4b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -204,7 +204,7 @@
 					},
 					"response": [
 						{
-							"id": "d8fb9885-35d2-451f-a7ef-94be0a3e65b1",
+							"id": "9a0c68a6-bfd2-4a82-a93c-3e78cda4a5a2",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "POST",
@@ -232,7 +232,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -270,7 +269,7 @@
 				},
 				{
 					"name": "Create user Copy",
-					"id": "19edf53e-8069-4fc2-867d-d8fd9ea25f5a",
+					"id": "e87d20a3-9684-4f3a-b208-a8961f59f97b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -300,7 +299,7 @@
 					},
 					"response": [
 						{
-							"id": "b51c1fac-96d3-499e-ba48-281c885b4219",
+							"id": "5043076a-48cb-4f00-a1a5-39364c44dd53",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "POST",
@@ -328,7 +327,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -366,7 +364,7 @@
 				},
 				{
 					"name": "Get users",
-					"id": "c15cd91d-bfb9-4318-8639-e7821f6d0050",
+					"id": "0c6dde1f-169c-4c6e-8847-c0e803b1c6ee",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -389,7 +387,7 @@
 					},
 					"response": [
 						{
-							"id": "95146a65-1f13-4a09-affb-fc8e23da0169",
+							"id": "840e92eb-10ec-429f-b10d-5ffaed2cbae4",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "GET",
@@ -410,7 +408,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -448,7 +445,7 @@
 				},
 				{
 					"name": "Update user",
-					"id": "93b6479a-2da5-4947-aab7-614fbf9d09c4",
+					"id": "bcbe386a-0e18-4faa-8a7d-8906aa6c42d7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -487,7 +484,7 @@
 					},
 					"response": [
 						{
-							"id": "116f3dd2-cc08-4d61-ba65-c17142011644",
+							"id": "870a03a7-2b1b-4f3c-8e85-f33f1e1a7cb2",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "PUT",
@@ -524,7 +521,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -562,7 +558,7 @@
 				},
 				{
 					"name": "Delete user",
-					"id": "d738dc89-2a3f-446e-b94e-e76ef75b91c3",
+					"id": "5866d2ba-5457-4594-947a-b0ad20176499",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -592,7 +588,7 @@
 					},
 					"response": [
 						{
-							"id": "42a75e68-af7f-4dbc-afa3-f0f749d5d4c0",
+							"id": "d5834b56-55ac-4ec2-a735-28a80bf9dafc",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "DELETE",
@@ -620,7 +616,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -657,7 +652,7 @@
 					]
 				}
 			],
-			"id": "1f7e9669-0ea9-414f-88c4-a3e4b5ce021f",
+			"id": "1c4bb0ca-dd05-4350-887c-1c722fc6c4cd",
 			"description": "Contains all requests related to users API."
 		},
 		{
@@ -665,7 +660,7 @@
 			"item": [
 				{
 					"name": "Create course",
-					"id": "474545bf-87dd-4fc8-8b35-5373988df8a0",
+					"id": "c685c76c-6786-4f4d-a93b-f32e2423c7e3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -697,7 +692,7 @@
 					},
 					"response": [
 						{
-							"id": "d60f380c-8692-43cd-bb58-faa7ab165a4a",
+							"id": "1a476855-68a8-4117-8faf-4eb97cf8e9d5",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "POST",
@@ -727,7 +722,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -765,7 +759,7 @@
 				},
 				{
 					"name": "Get course(s)",
-					"id": "734b3b7f-b8b7-4563-a59b-a1ccb0bba2a3",
+					"id": "9888a4ec-fc99-436c-9b78-44cb48cccbb8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -795,7 +789,7 @@
 					},
 					"response": [
 						{
-							"id": "96931174-0011-4fc1-a02b-2297500d0378",
+							"id": "8d62fa1b-48f5-48ae-b223-94a864b99952",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "GET",
@@ -816,7 +810,94 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1613"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64d-tbLWrUixFIXD0TLLHTlnNv8o7iI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:31:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"65c900b8419e873014847148\",\n            \"author\": \"65c8e4ff77e3c5cf9602741b\",\n            \"title\": \"C#\",\n            \"description\": \"C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework. C# is used to develop web apps, desktop apps, mobile apps, games and much more\",\n            \"difficulty\": 2,\n            \"tags\": [],\n            \"additionalMaterials\": [],\n            \"createdAt\": \"2024-02-11T17:15:36.541Z\",\n            \"updatedAt\": \"2024-02-11T19:30:04.810Z\",\n            \"__v\": 0,\n            \"comments\": []\n        },\n        {\n            \"_id\": \"65cb7fa7dd32f95e37d06fa2\",\n            \"author\": \"65cb7eeedd32f95e37d06fa0\",\n            \"title\": \"Learn To Program with Delphi and Object Pascal\",\n            \"description\": \"Master Object Pascal programming with Lazarus or Delphi\",\n            \"difficulty\": 1,\n            \"tags\": [\n                \"Programming\",\n                \"Pascal\",\n                \"Bestseller\"\n            ],\n            \"additionalMaterials\": [],\n            \"comments\": [],\n            \"createdAt\": \"2024-02-13T14:41:43.371Z\",\n            \"updatedAt\": \"2024-02-13T14:41:43.371Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65cb880aa9e2940656e81199\",\n            \"author\": \"65cb7eeedd32f95e37d06fa0\",\n            \"title\": \"Docker & Kubernetes: The Practical Guide [2024 Edition]\",\n            \"description\": \"Learn Docker, Docker Compose, Multi-Container Projects, Deployment and all about Kubernetes from the ground up!\",\n            \"difficulty\": 2,\n            \"tags\": [\n                \"English\",\n                \"Bestseller\"\n            ],\n            \"additionalMaterials\": [],\n            \"comments\": [],\n            \"createdAt\": \"2024-02-13T15:17:30.127Z\",\n            \"updatedAt\": \"2024-02-13T15:23:44.692Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65cb98b9323f9a9019796f16\",\n            \"author\": \"65cb7eeedd32f95e37d06fa0\",\n            \"title\": \"C#\",\n            \"description\": \"C# (C-Sharp) is a programming language developed by Microsoft that run…\",\n            \"difficulty\": 2,\n            \"tags\": [\n                \"Bestseller\"\n            ],\n            \"additionalMaterials\": [],\n            \"comments\": [],\n            \"createdAt\": \"2024-02-13T16:28:41.596Z\",\n            \"updatedAt\": \"2024-02-13T16:28:41.596Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"received\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get course(s) without ID",
+					"id": "6a70655d-082b-4dee-9b0c-5bc1f99baf40",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/courses/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"courses",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65cb7fa7dd32f95e37d06fa2"
+								}
+							]
+						},
+						"description": "This endpoint retrieves course information from the system. It can be used in two modes: without specifying an ID to fetch a list of all courses, or with an ID to retrieve details about a specific course.\n\n#### Request Without Specifying ID\n\n- **Method**: GET\n    \n- **URL**: `http://localhost:8080/v1/courses`\n    \n- **Authentication**: Depending on the application's security policy, this endpoint may require authentication and appropriate permissions to access the list of courses.\n    \n\n#### Request With Specifying ID\n\n- **Method**: GET\n    \n- **URL**: `http://localhost:8080/v1/courses/:id`\n    \n    - **`:id`** **(optional)**: The unique identifier of the course to retrieve. Replace `:id` with the actual course ID.\n        \n\n#### Response\n\n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n```\n{\n  \"data\": [\n    {\n      \"_id\": \"string\",\n      \"author\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"difficulty\": \"number\",\n      \"tags\": [\"string\"],\n      \"additionalMaterials\": [\"string\"],\n      \"comments\": [\"string\"],\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\",\n      \"__v\": \"number\"\n    }\n  ],\n  \"message\": \"string\"\n}\n\n ```\n\n- **Fields**:\n    \n    - `data`: An array of course objects (when ID is not specified) or a single course object (when ID is specified).\n        \n        - `_id`: The unique identifier for the course.\n            \n        - `author`: The ID of the user who authored the course.\n            \n        - `title`: The title of the course.\n            \n        - `description`: A detailed description of what the course covers.\n            \n        - `difficulty`: The difficulty level of the course.\n            \n        - `tags`: An array of tags related to the course for easier categorization and search.\n            \n        - `additionalMaterials`: An array of links or references to additional materials for the course.\n            \n        - `comments`: An array to store comments related to the course.\n            \n        - `createdAt`: The timestamp when the course was created.\n            \n        - `updatedAt`: The timestamp when the course information was last updated.\n            \n        - `__v`: The version of the document in the database, used internally for handling document updates.\n            \n    - `message`: A message indicating the outcome of the operation. For successful retrieval, it typically says `\"received\"`.\n        \n\n#### Status Codes\n\n- **200 OK**: The request was successful, and the course(s) data is returned.\n    \n- **400 Bad Request**: The request was malformed, such as missing required fields.\n    \n- **404 Not Found**: No course found with the given ID (when ID is specified)."
+					},
+					"response": [
+						{
+							"id": "21e52a4b-58ce-43a7-87eb-2e3bf4407b7a",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/courses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"courses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -854,7 +935,7 @@
 				},
 				{
 					"name": "Delete course",
-					"id": "56b4c61c-37f2-455f-b79f-9241a7022a99",
+					"id": "f61ede80-737a-4749-b747-7ea04a034bba",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -884,7 +965,7 @@
 					},
 					"response": [
 						{
-							"id": "3b7683a7-7125-4124-8c71-bec97140d837",
+							"id": "3aef13c5-4bb4-4ba6-bdda-cabaf3d7dff5",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "DELETE",
@@ -912,7 +993,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -950,7 +1030,7 @@
 				},
 				{
 					"name": "Update course",
-					"id": "97b58742-bae8-4f92-94b4-a8c0e157e888",
+					"id": "4f502c6f-921f-402b-941a-847bcc4dd552",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -989,7 +1069,7 @@
 					},
 					"response": [
 						{
-							"id": "612c0d76-46fa-4857-935d-45a629e569ed",
+							"id": "23e34804-d0ca-4219-b901-9d4228e40587",
 							"name": "Ok",
 							"originalRequest": {
 								"method": "PUT",
@@ -1026,7 +1106,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -1063,7 +1142,7 @@
 					]
 				}
 			],
-			"id": "38b4a89b-dc4c-440b-b3cb-3a45317df337",
+			"id": "38ed020b-f5d0-49a0-b4c3-68100ccdb9cb",
 			"description": "Contains all requests related to courses API."
 		}
 	]
