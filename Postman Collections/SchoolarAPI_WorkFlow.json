@@ -232,7 +232,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -328,7 +327,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -410,7 +408,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -524,7 +521,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -620,7 +616,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -727,7 +722,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -816,7 +810,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -905,7 +898,94 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1613"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64d-tbLWrUixFIXD0TLLHTlnNv8o7iI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:31:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"65c900b8419e873014847148\",\n            \"author\": \"65c8e4ff77e3c5cf9602741b\",\n            \"title\": \"C#\",\n            \"description\": \"C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework. C# is used to develop web apps, desktop apps, mobile apps, games and much more\",\n            \"difficulty\": 2,\n            \"tags\": [],\n            \"additionalMaterials\": [],\n            \"createdAt\": \"2024-02-11T17:15:36.541Z\",\n            \"updatedAt\": \"2024-02-11T19:30:04.810Z\",\n            \"__v\": 0,\n            \"comments\": []\n        },\n        {\n            \"_id\": \"65cb7fa7dd32f95e37d06fa2\",\n            \"author\": \"65cb7eeedd32f95e37d06fa0\",\n            \"title\": \"Learn To Program with Delphi and Object Pascal\",\n            \"description\": \"Master Object Pascal programming with Lazarus or Delphi\",\n            \"difficulty\": 1,\n            \"tags\": [\n                \"Programming\",\n                \"Pascal\",\n                \"Bestseller\"\n            ],\n            \"additionalMaterials\": [],\n            \"comments\": [],\n            \"createdAt\": \"2024-02-13T14:41:43.371Z\",\n            \"updatedAt\": \"2024-02-13T14:41:43.371Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65cb880aa9e2940656e81199\",\n            \"author\": \"65cb7eeedd32f95e37d06fa0\",\n            \"title\": \"Docker & Kubernetes: The Practical Guide [2024 Edition]\",\n            \"description\": \"Learn Docker, Docker Compose, Multi-Container Projects, Deployment and all about Kubernetes from the ground up!\",\n            \"difficulty\": 2,\n            \"tags\": [\n                \"English\",\n                \"Bestseller\"\n            ],\n            \"additionalMaterials\": [],\n            \"comments\": [],\n            \"createdAt\": \"2024-02-13T15:17:30.127Z\",\n            \"updatedAt\": \"2024-02-13T15:23:44.692Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65cb98b9323f9a9019796f16\",\n            \"author\": \"65cb7eeedd32f95e37d06fa0\",\n            \"title\": \"C#\",\n            \"description\": \"C# (C-Sharp) is a programming language developed by Microsoft that run…\",\n            \"difficulty\": 2,\n            \"tags\": [\n                \"Bestseller\"\n            ],\n            \"additionalMaterials\": [],\n            \"comments\": [],\n            \"createdAt\": \"2024-02-13T16:28:41.596Z\",\n            \"updatedAt\": \"2024-02-13T16:28:41.596Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"received\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get course(s) without ID Copy",
+					"id": "cc33b8ec-5059-4361-b553-1b8f9501b44d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/courses/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"courses",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65cb7fa7dd32f95e37d06fa2"
+								}
+							]
+						},
+						"description": "This endpoint retrieves course information from the system. It can be used in two modes: without specifying an ID to fetch a list of all courses, or with an ID to retrieve details about a specific course.\n\n#### Request Without Specifying ID\n\n- **Method**: GET\n    \n- **URL**: `http://localhost:8080/v1/courses`\n    \n- **Authentication**: Depending on the application's security policy, this endpoint may require authentication and appropriate permissions to access the list of courses.\n    \n\n#### Request With Specifying ID\n\n- **Method**: GET\n    \n- **URL**: `http://localhost:8080/v1/courses/:id`\n    \n    - **`:id`** **(optional)**: The unique identifier of the course to retrieve. Replace `:id` with the actual course ID.\n        \n\n#### Response\n\n- **Content-Type**: `application/json`\n    \n- **Body**:\n    \n\n```\n{\n  \"data\": [\n    {\n      \"_id\": \"string\",\n      \"author\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"difficulty\": \"number\",\n      \"tags\": [\"string\"],\n      \"additionalMaterials\": [\"string\"],\n      \"comments\": [\"string\"],\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\",\n      \"__v\": \"number\"\n    }\n  ],\n  \"message\": \"string\"\n}\n\n ```\n\n- **Fields**:\n    \n    - `data`: An array of course objects (when ID is not specified) or a single course object (when ID is specified).\n        \n        - `_id`: The unique identifier for the course.\n            \n        - `author`: The ID of the user who authored the course.\n            \n        - `title`: The title of the course.\n            \n        - `description`: A detailed description of what the course covers.\n            \n        - `difficulty`: The difficulty level of the course.\n            \n        - `tags`: An array of tags related to the course for easier categorization and search.\n            \n        - `additionalMaterials`: An array of links or references to additional materials for the course.\n            \n        - `comments`: An array to store comments related to the course.\n            \n        - `createdAt`: The timestamp when the course was created.\n            \n        - `updatedAt`: The timestamp when the course information was last updated.\n            \n        - `__v`: The version of the document in the database, used internally for handling document updates.\n            \n    - `message`: A message indicating the outcome of the operation. For successful retrieval, it typically says `\"received\"`.\n        \n\n#### Status Codes\n\n- **200 OK**: The request was successful, and the course(s) data is returned.\n    \n- **400 Bad Request**: The request was malformed, such as missing required fields.\n    \n- **404 Not Found**: No course found with the given ID (when ID is specified)."
+					},
+					"response": [
+						{
+							"id": "03afed61-d4bc-4d44-bbe0-11b4d722d395",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/courses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"courses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -1001,7 +1081,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -1115,7 +1194,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "X-Powered-By",
